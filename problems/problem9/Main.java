@@ -1,11 +1,13 @@
 import java.util.*;
 import java.lang.*;
 import java.io.*;
+import Log.Log;
 
 public class Main {
     public static void main(String args[]){
         Thread mythread[] = new Thread[1000];
         LinkedList<students> ll = new LinkedList<students>();
+        Log logg  = new Log("problem9");
         try {
             Scanner sc = new Scanner(new File("data\\sheet.csv"));
             sc.useDelimiter(", ");
@@ -28,9 +30,11 @@ public class Main {
                 mythread[index].start();
             }
             System.out.println("Data has been processed");
+            logg.logger.info("Threading completed");
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            logg.logger.warning("File Not Found");
         }
     }
 }
