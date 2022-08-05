@@ -1,3 +1,4 @@
+
 class shape{
     void draw(){
         System.out.println("draw shape");

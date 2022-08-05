@@ -1,3 +1,4 @@
+
 public class Main {
 	int counter = 0;
 	static int N;
